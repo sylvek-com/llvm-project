@@ -339,7 +339,7 @@ bool SBBreakpointName::GetAutoContinue() {
   
   BreakpointName *bp_name = GetBreakpointName();
   if (!bp_name)
-    return nullptr;
+    return false;
  
   LLDB_LOG(log, "Name: {0}\n", bp_name->GetName());
   std::lock_guard<std::recursive_mutex> guard(

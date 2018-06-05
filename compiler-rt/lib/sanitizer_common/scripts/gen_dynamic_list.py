@@ -102,7 +102,7 @@ def main(argv):
     print('global:')
   result.sort()
   for f in result:
-    print(u'  %s;' % f)
+    print('  %s;' % f)
   if args.version_list:
     print('local:')
     print('  *;')
