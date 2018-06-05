@@ -109,8 +109,9 @@ if( CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR )
   set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib${LLVM_LIBDIR_SUFFIX} )
 
   if(LLVM_INCLUDE_TESTS)
-    set(Python_ADDITIONAL_VERSIONS 2.7)
+    set(Python_ADDITIONAL_VERSIONS 2.6)
     include(FindPythonInterp)
+    include(FindPythonLibs)
     if(NOT PYTHONINTERP_FOUND)
       message(FATAL_ERROR
 "Unable to find Python interpreter, required for builds and testing.
@@ -118,8 +119,8 @@ if( CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR )
 Please install Python or specify the PYTHON_EXECUTABLE CMake variable.")
     endif()
 
-    if( ${PYTHON_VERSION_STRING} VERSION_LESS 2.7 )
-      message(FATAL_ERROR "Python 2.7 or newer is required")
+    if( ${PYTHON_VERSION_STRING} VERSION_LESS 2.6 )
+      message(FATAL_ERROR "Python 2.6 or newer is required")
     endif()
 
     # Check prebuilt llvm/utils.

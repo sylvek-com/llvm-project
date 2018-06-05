@@ -24,7 +24,7 @@
 # System modules
 import sys
 import re
-if sys.version_info.major >= 3:
+if sys.version_info[0] >= 3:
     import io as StringIO
 else:
     import StringIO

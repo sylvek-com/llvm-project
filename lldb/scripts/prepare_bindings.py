@@ -34,7 +34,7 @@ def prepare_binding_for_language(scripts_dir, script_lang, options):
     the process will exit where it fails.
     """
     # Ensure the language-specific prepare module exists.
-    script_name = "prepare_binding_{}.py".format(script_lang)
+    script_name = "prepare_binding_{0}.py".format(script_lang)
     lang_path = os.path.join(scripts_dir, script_lang)
     script_path = os.path.join(lang_path, script_name)
     if not os.path.exists(script_path):
